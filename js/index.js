@@ -53,17 +53,17 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   var count = 1;
   //console.log(meteors);
 
-  
-  
+
+
   quantile.domain(meteors.features.map( function(d) {
-    
+
     var val = parseInt(d.properties.mass);
     if(val>0) {
       //console.log("Quantile domain: " + val);
       return val;
     }
   }));
-  
+
   classQuantile.domain(meteors.features.map( function(d) {
     var val = parseInt(d.properties.mass);
     if(val>0) { return val; }
@@ -93,17 +93,18 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     })
     .on("mouseover", function(d) {
       console.log(d.properties.name);
-      var str = "<h3>Info Panel</h3>" + 
-                "<strong>ID:</strong> " + d.properties.id +
-                "<br><strong>Year:</strong> " + d.properties.year.substr(0,4) +
-                "<br><strong>Name:</strong> " + d.properties.name + 
-                "<br><strong>Mass:</strong> " + d.properties.mass +
-                "<br><strong>Recclass:</strong> " + d.properties.recclass;
-    
+      var str = "<table>" +
+                "<tr><td><strong>ID:</strong></td><td>"+ d.properties.id + "</td>" +
+                "<tr><td><strong>Year:</strong></td><td>" + d.properties.year.substr(0,4) + "</td>" +
+                "<tr><td><strong>Name:</strong></td><td>" + d.properties.name + "</td>" +
+                "<tr><td><strong>Mass:</strong></td><td>" + d.properties.mass + "</td>" +
+                "<tr><td><strong>Recclass:</strong></td><td>" + d.properties.recclass + "</td>" +
+                "</table>";
+
       document.getElementById("info").innerHTML = str;
       document.getElementById("info").style.display="inline";
   /*
-  
+
   "mass": "1000",
 "name": "Aioun el Atrouss",
 "reclong": "-9.570280",
@@ -117,9 +118,9 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 "reclat": "16.398060",
 "geolocation_city": null,
 "nametype": "Valid"
-  
+
   */
-  
+
   });
 
 });

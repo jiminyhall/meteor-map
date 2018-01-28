@@ -1,12 +1,17 @@
+h1 {
+  color: white;
+}
+
 #info {
   width: 200px;
   padding: 5px 5px 5px 5px;
   margin: 0 0 0 0;
   text-align: left;
-  background-color: rgba(0,0,0,0.5); 
+  background-color: rgba(75,75,75,0.75);
+  color: white;
   position: fixed;
-  left: 20px;
-  top: 20px;
+  //left: 20px;
+  //top: 20px;
   display: none;
   z-index: 999;
 }
@@ -28,13 +33,13 @@ svg {
 .Q3 { fill:rgb(158,202,225); }
 .Q4 { fill:rgb(107,174,214); }
 
-.subunit { 
-  stroke: #ffff33; 
+.subunit {
+  stroke: #ffff33;
   fill: black;
 }
 
 /*
-.subunit.Afghanistan { 
+.subunit.Afghanistan {
   fill: darkred;
   stroke: darkred;
 }
@@ -69,5 +74,3 @@ a:hover {
   left: 30px;
   z-index: 1;
 }
-
-
